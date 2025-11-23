@@ -1,28 +1,44 @@
-body  {
+body {
     background-color: #0905ca;
-}
 
-
-
-
-
-
-.page {
-    right: 0;
-    color: #0905ca;
-    border-radius: 0 20px 20px 0;
-    transform-origin: left center;
-    -webkit-animation: rot-front 1s linear;
-    animation: rot-front 1s linear;
-    background-color: #333333;
-}
-
-@keyframes rot-front {
-    from {
-        transform: translateZ(2px) rotateY(0deg);
+    .box::before {
+        background-color: #0905ca;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: fit-content;
+        filter: drop-shadow(0 15px 50px #000);
+        border-radius: 20px;
+        animation: rotating 4s linear infinite;
+        animation-delay: -1s;
     }
 
-    to {
-        transform: translateZ(2px) rotateY(0deg);
+    .box::after {
+        content: "";
+        position: absolute;
+        inset: 4px;
+        background: #2d2d39;
+        border-radius: 15px;
+        border: 8px solid #25252b;
     }
-}
+
+    .page {
+        right: 0;
+        color: #0905ca;
+        border-radius: 0 20px 20px 0;
+        transform-origin: left center;
+        -webkit-animation: rot-front 1s linear;
+        animation: rot-front 1s linear;
+        background-color: #333333;
+    }
+
+        @keyframes rot-front {
+            from {
+                transform: translateZ(2px) rotateY(0deg);
+            }
+    
+            to {
+                transform: translateZ(2px) rotateY(0deg);
+            }
+        }
+    }
